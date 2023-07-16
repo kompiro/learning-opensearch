@@ -1,0 +1,88 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/ruby
+{
+	"name": "learning-opensearch",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "development",
+	"workspaceFolder": "/workspace",
+	"shutdownAction": "stopCompose",
+	"containerUser": "vscode",
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"eamodio.gitlens",
+				"jebbs.plantuml",
+				"ms-azuretools.vscode-docker",
+				"mutantdino.resourcemonitor",
+				"aki77.rails-db-schema",
+				"kaiwood.endwise",
+				"koichisasada.vscode-rdbg",
+				"vscode-icons-team.vscode-icons"
+			],
+			"settings": {
+				"editor.tabSize": 2,
+				"editor.minimap.enabled": false,
+				"editor.bracketPairColorization.enabled": true,
+				"editor.guides.bracketPairs": true,
+				"editor.copyWithSyntaxHighlighting": false,
+				"editor.formatOnSave": true,
+				"eslint.validate": [
+					"javascript",
+					"typescript"
+				],
+				"search.useGlobalIgnoreFiles": true,
+				"search.useParentIgnoreFiles": true,
+				"eslint.format.enable": true,
+				"workbench.startupEditor": "none",
+				"workbench.editor.tabSizing": "shrink",
+				"terminal.integrated.copyOnSelection": true,
+				"terminal.integrated.rightClickBehavior": "paste",
+				"files.autoSave": "onFocusChange",
+				"files.trimTrailingWhitespace": true,
+				"ruby.intellisense": "rubyLocate",
+				"ruby.lint": {
+					"rubocop": true
+				},
+				"[ruby]": {
+					"editor.formatOnSave": true
+				},
+				"ruby.format": "rubocop",
+				"ruby.useBundler": true,
+				"ruby.useLanguageServer": false,
+				"plantuml.server": "http://plantuml:8080",
+				"plantuml.render": "PlantUMLServer",
+				// disable to suggestionActions by VSCode
+				"javascript.suggestionActions.enabled": false
+			}
+		}
+	},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		3000,
+		5601
+	],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "bundle",
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+	"features": {
+		"docker-from-docker": "latest"
+		// 	"git": "latest",
+		// 	"github-cli": "latest"
+	},
+	"containerEnv": {
+		"GITHUB_USER": "${localEnv:GITHUB_USER}",
+		"LANG": "ja:en",
+		"LANGUAGE": "ja:en",
+		"LC_ALL": "ja_JP.UTF-8",
+		"LC_MESSAGES": "ja_JP.UTF-8",
+		"LC_CTYPE": "ja_JP.UTF-8",
+		"LC_COLLATE": "ja_JP.UTF-8"
+	},
+	"remoteEnv": {
+		"BUNDLE_APP_CONFIG": null
+	}
+}
