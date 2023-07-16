@@ -1,16 +1,24 @@
-# Opensearch お試し Rails プロジェクト
+# README
 
-## はじめに
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-VSCode Devconatiner で環境を作っています。
+Things you may want to cover:
 
-## 構成
+* Ruby version
 
-Opensearch はクラスタ構成にしています。
+* System dependencies
 
-## Opensearch Dashboard
+* Configuration
 
-http://localhost:5601 にを開くとログイン画面が開くので admin / admin で閲覧可能です。
+* Database creation
 
-### index の追加
+* Database initialization
 
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
